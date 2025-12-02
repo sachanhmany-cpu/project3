@@ -1,0 +1,87 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('images/green-fling.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    max-width: 90%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.firefly {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 150, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 150, 0.8),
+                0 0 20px rgba(255, 255, 150, 0.6),
+                0 0 30px rgba(255, 255, 150, 0.4);
+    animation: float 8s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+.nav-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 3;
+}
+
+/* Laptop and up */
+@media (min-width: 1024px) {
+    img {
+        max-width: 60%;
+    }
+    
+    .firefly {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .nav-button {
+        padding: 15px 30px;
+        font-size: 18px;
+        bottom: 40px;
+        right: 40px;
+    }
+}

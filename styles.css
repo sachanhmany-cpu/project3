@@ -1,60 +1,361 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed; /* Add this */
+  overflow: hidden; /* Add this back */
 }
 
 .fullscreen-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-.enter-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-}
-
-.enter-button {
-    padding: 20px 50px;
-    font-size: 24px;
-    color: white;
-    background-color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.enter-button:hover {
-    background-color: #555;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed; /* Change from relative to fixed */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .nav-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Laptop/Desktop styles */
+@media (min-width: 768px) {
+  .nav-button {
     padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 18px;
+    bottom: 40px;
+    right: 40px;
+  }
 }
 
-.nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+.popup {
+    position: absolute;
+    top: 100px;
+    left: 4px;
+    z-index: 100;
+    animation: popIn 0.5s ease-out forwards;
+    opacity: 0; /* Start hidden */
 }
 
-.nav-button.prev {
-    right: auto;
-    left: 30px;
+.popup img {
+    max-width: 150px;
+    display: block;
+    filter: drop-shadow(0 0 10px #49474c) 
+            drop-shadow(0 0 20px #5e5261) 
+            drop-shadow(0 0 30px #514952);
+}
+  
+@keyframes popIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup {
+        top: 20vh;
+        left: 3vw;
+    }
+    
+    .popup img {
+        max-width: 250px;
+    }
+}
+
+.popup2 {
+    top: 10px;
+    left: 100px;  /* Use left instead of right */
+    animation: popIn 0.3s ease-out 1s forwards; /* delay is now part of animation shorthand */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup2 {
+        top: 1vh;
+        left: 10vw;
+    }
+}
+
+.popup3 {
+    top: 70px;
+    left: 90px;
+    animation: popIn 0.3s ease-out 3s forwards; /* Pops up after 2 seconds */
+}
+
+.popup3 img {
+    max-width: 250px; /* Put max-width here on the img */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup3 {
+        top: 14vh;
+        left: 20vw;
+    }
+     .popup3 img {
+        max-width: 350px; /* And here too */
+    }
+
+}
+
+.popup4 {
+    top: 200px;
+    left: 60px;
+    opacity: 0; /* Add this line */
+    animation: popIn 0.3s ease-out 1.5s forwards; /* Pops up after 3 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup4 {
+        top: 30vh;
+        left: 19vw;
+    }
+}
+
+.popup5 {
+    top: 250px;
+    left: 2px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 1.5s forwards; /* Pops up after 4 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup5 {
+        top: 40vh;
+        left: 6vw;
+    }
+}
+
+.popup6 {
+    top: 150px;
+    left: 150px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 3s forwards; /* Pops up after 5 seconds */
+}
+
+.popup6 img {
+    max-width: 200px; /* Bigger than the default 150px */
+    filter: drop-shadow(0 0 10px #878587) 
+                drop-shadow(0 0 20px #828082) 
+                drop-shadow(0 0 30px #807a80);
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup6 {
+        top: 45vh;
+        left: 35vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .popup6 img {
+        max-width: 300px;
+    }
+}
+
+.popup7 {
+    top: 270px;
+    left: 200px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 4s forwards; /* Pops up after 4 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup7 {
+        top: 50vh;
+        left: 30vw;
+    }
+}
+
+.popup9 {
+    top: 330px;
+    left: 250px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 5s forwards; /* Pops up after 5 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup9 {
+        top: 2vh;
+        left: 50vw;
+    }
+}
+
+.popup10 {
+    top: 350px;
+    left: 50px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 5s forwards; /* Pops up after 5 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup10 {
+        top: 85vh;
+        left: 45vw;
+    }
+}
+
+.popup10 img {
+    max-width: 250px; /* Bigger than the default 150px */
+    filter: drop-shadow(0 0 10px #848484) 
+            drop-shadow(0 0 20px #939493) 
+            drop-shadow(0 0 30px #979797);
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup10 img {
+        max-width: 768px !important;
+    }
+}
+
+.popup11 {
+    top: 400px;
+    left: 100px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 3s forwards; /* Pops up after 5.5 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup11 {
+        top: 70vh;
+        left: 50vw;
+    }
+}
+
+.popup12 {
+    top: 500px;
+    left: 170px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 2s forwards; /* Pops up after 6 seconds */    
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup12 {
+        top: 75vh;
+        left: 5vw;
+    }
+
+}
+.popup12 img {
+    max-width: 250px; /* Bigger than the default 150px */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup12 img {
+        max-width: 350px;
+    }
+}
+
+.popup13 {
+    top: 500px;
+    left: 50px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 1.5s forwards; /* Pops up after 6.5 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup13 {
+        top: 25vh;
+        left: 50vw;
+    }
+}
+
+.popup14 {
+    top: 650px;
+    left: 200px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 4s forwards; /* Pops up after 7 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup14 {
+        top: 85vh;
+        left: 65vw;
+    }
+}
+
+.popup15 {
+    top: 600px;
+    left: 50px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 3s forwards; /* Pops up after 7.5 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup15 {
+        top: 50vh;
+        left: 60vw;
+    }
+}
+
+.popup16 {
+    top: 700px;
+    left: 20px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 4s forwards; /* Pops up after 8 seconds */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup16 {
+        top: 10vh;
+        left: 75vw;
+    }
+}
+
+.popup17 {
+    top: 100px;
+    left: 150px;
+    opacity: 0;
+    animation: popIn 0.3s ease-out 1s forwards; /* Pops up after 6 seconds */    
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup17 {
+        top: 35vh;
+        left: 80vw;
+    }
+
+}
+.popup17 img {
+    max-width: 250px; /* Bigger than the default 150px */
+}
+
+/* Laptop/Desktop */
+@media (min-width: 768px) {
+    .popup17 img {
+        max-width: 350px;
+    }
 }
