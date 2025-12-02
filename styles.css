@@ -19,7 +19,7 @@ body {
 }
 
 .nav-button {
-  position: fixed; /* Change from absolute to fixed */
+  position: absolute;
   bottom: 120px;
   right: 20px;
   padding: 12px 24px;
@@ -28,7 +28,8 @@ body {
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
-  z-index: 1000; /* Add this to make sure it's on top of everything */
+  z-index: 100;  /* ADD THIS LINE */
+  cursor: pointer;  /* ADD THIS LINE TOO */
 }
 
 /* Laptop/Desktop styles */

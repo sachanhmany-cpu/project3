@@ -15,16 +15,17 @@ body {
 }
 
 .nav-button {
-    position: fixed;
-    bottom: 120px;
-    right: 20px;
-    padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s;
+  position: absolute;
+  bottom: 120px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 100;  /* ADD THIS LINE */
+  cursor: pointer;  /* ADD THIS LINE TOO */
 }
 
 .nav-button:hover {

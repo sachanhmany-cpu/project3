@@ -55,16 +55,17 @@ img {
 }
 
 .nav-button {
-    position: absolute;
-    bottom: 120px;
-    right: 20px;
-    padding: 12px 24px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    z-index: 3;
+  position: absolute;
+  bottom: 120px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 100;  /* ADD THIS LINE */
+  cursor: pointer;  /* ADD THIS LINE TOO */
 }
 
 /* Laptop and up */
