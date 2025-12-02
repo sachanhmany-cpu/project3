@@ -19,7 +19,7 @@ body {
 }
 
 .nav-button {
-  position: absolute;
+  position: fixed;
   bottom: 120px;
   right: 20px;
   padding: 12px 24px;
@@ -28,7 +28,7 @@ body {
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
-  z-index: 100;  /* ADD THIS LINE */
+  z-index: 1000;  /* ADD THIS LINE */
   cursor: pointer;  /* ADD THIS LINE TOO */
 }
 
