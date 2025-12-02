@@ -16,7 +16,7 @@ body {
 
 .nav-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 120px;
     right: 20px;
     padding: 15px 30px;
     background-color: rgba(0, 0, 0, 0.7);
