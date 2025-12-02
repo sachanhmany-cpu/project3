@@ -20,7 +20,7 @@ body {
 
 .nav-button {
   position: fixed; /* Change from absolute to fixed */
-  bottom: 180px;
+  bottom: 120px;
   right: 20px;
   padding: 12px 24px;
   background-color: #333;
