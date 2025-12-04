@@ -7,6 +7,39 @@
 
 </head>
 <body>
-    <a href="page5.html" class="nav-button">Next</a>
+    <audio id="bgAudio" loop>
+    <source src="./media/fly.m4a" type="audio/mp4">
+    <source src="./media/fly.m4a" type="audio/x-m4a">
+    Your browser does not support the audio element.
+</audio>
+
+<div id="audioPrompt">tap or click the screen</div>
+
+<a href="page5.html" class="nav-button">Next</a>
+
+<script>
+    const audio = document.getElementById('bgAudio');
+    let audioStarted = false;
+
+    function startAudio() {
+        if (!audioStarted) {
+            audio.play().then(() => {
+                console.log('Audio playing');
+                audioStarted = true;
+            }).catch((error) => {
+                console.error('Audio play failed:', error);
+            });
+        }
+    }
+
+    // For desktop - works on first mouse movement
+    document.body.addEventListener('mousemove', startAudio, { once: true });
+    
+    // For mobile - works on first touch/tap
+    document.body.addEventListener('touchstart', startAudio, { once: true });
+    
+    // Backup - works on any click
+    document.body.addEventListener('click', startAudio, { once: true });
+</script>
 </body>
 </html>

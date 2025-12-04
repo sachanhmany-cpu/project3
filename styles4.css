@@ -28,26 +28,42 @@ body {
   cursor: pointer;  /* ADD THIS LINE TOO */
 }
 
-.nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+/* Laptop/Desktop styles */
+@media (min-width: 768px) {
+  .nav-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    bottom: 40px;
+    right: 40px;
+  }
+}
+
+#audioPrompt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
+    z-index: 5000;
 }
 
 /* Tablet styles */
 @media (min-width: 768px) {
-    .nav-button {
-        bottom: 30px;
-        right: 30px;
-        padding: 20px 40px;
-        font-size: 20px;
+    #audioPrompt {
+        font-size: 22px;
     }
 }
 
 /* Laptop/Desktop styles */
 @media (min-width: 1024px) {
-    .nav-button {
-        bottom: 40px;
-        right: 40px;
-        padding: 25px 50px;
-        font-size: 22px;
+    #audioPrompt {
+        font-size: 24px;
     }
 }

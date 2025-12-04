@@ -9,9 +9,12 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     min-height: 100vh;
+    height: 100vh;
+    width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .nav-button {
@@ -39,5 +42,141 @@ body {
         font-size: 18px;
         bottom: 40px;
         right: 40px;
+    }
+}
+
+/* Ant styles */
+.ant {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 500;
+}
+
+.ant-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 500;
+}
+
+/* Ant 1 - crawls from left to right across top */
+.ant1 {
+    background-image: url('./images/ant1.png');
+    top: 20%;
+    left: -50px;
+    animation: crawlRight 15s linear infinite;
+}
+
+/* Ant 2 - crawls from right to left across middle */
+.ant2 {
+    background-image: url('./images/ant2.png');
+    top: 50%;
+    right: -50px;
+    animation: crawlLeft 18s linear infinite;
+    transform: scaleX(-1);
+}
+
+/* Ant 3 - crawls from bottom to top on left side */
+.ant3 {
+    background-image: url('./images/ant3.png');
+    bottom: -50px;
+    left: 30%;
+    animation: crawlUp 20s linear infinite;
+    transform: rotate(-90deg);
+}
+
+/* Ant 4 - crawls from top to bottom on right side */
+.ant4 {
+    background-image: url('./images/ant1.png');
+    top: -50px;
+    right: 25%;
+    animation: crawlDown 16s linear infinite;
+    transform: rotate(90deg);
+}
+
+/* Ant 5 - diagonal crawl */
+.ant5 {
+    background-image: url('./images/ant2.png');
+    top: -50px;
+    left: -50px;
+    animation: crawlDiagonal 22s linear infinite;
+}
+
+/* Ant 6 - another horizontal crawler */
+.ant6 {
+    background-image: url('./images/ant3.png');
+    top: 70%;
+    left: -50px;
+    animation: crawlRight 17s linear infinite;
+    animation-delay: 3s;
+}
+
+/* Animations */
+@keyframes crawlRight {
+    from {
+        left: -50px;
+    }
+    to {
+        left: 110%;
+    }
+}
+
+@keyframes crawlLeft {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 110%;
+    }
+}
+
+@keyframes crawlUp {
+    from {
+        bottom: -50px;
+    }
+    to {
+        bottom: 110%;
+    }
+}
+
+@keyframes crawlDown {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 110%;
+    }
+}
+
+@keyframes crawlDiagonal {
+    from {
+        top: -50px;
+        left: -50px;
+    }
+    to {
+        top: 110%;
+        left: 110%;
+    }
+}
+
+/* Responsive ant sizes */
+@media (min-width: 768px) {
+    .ant {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ant {
+        width: 60px;
+        height: 60px;
     }
 }

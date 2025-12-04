@@ -1,9 +1,11 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY (merged so your image stays) */
 body {
     background-image: url('./images/page-8.png');
     background-size: cover;
@@ -11,9 +13,16 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
     position: relative;
 }
 
+/* NAV BUTTON */
 .nav-button {
   position: fixed;
   bottom: 120px;
@@ -24,15 +33,14 @@ body {
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
-  z-index: 1000;  /* ADD THIS LINE */
-  cursor: pointer;  /* ADD THIS LINE TOO */
+  z-index: 1000;
+  cursor: pointer;
 }
 
 .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Laptop/Desktop styles */
 @media (min-width: 768px) {
     .nav-button {
         padding: 15px 30px;
@@ -40,4 +48,92 @@ body {
         bottom: 40px;
         right: 40px;
     }
+}
+
+/* PAGE CONTENT */
+.page-content {
+  min-height: 100vh;
+  position: relative;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom) 16px;
+}
+
+/* CENTERED GLOWING QUOTE */
+.ending-quote {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1200;
+  pointer-events: none;
+  width: min(90vw, 420px);
+  text-align: center;
+}
+
+.quote-line {
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.08;
+  font-family: "Great Vibes", "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.95),
+    0 0 18px rgba(160,190,255,0.85),
+    0 0 36px rgba(120,160,255,0.6),
+    0 0 60px rgba(100,140,255,0.35);
+
+  -webkit-text-stroke: 0.2px rgba(255,255,255,0.06);
+  animation: glowPulse 3.2s ease-in-out infinite;
+  padding: 6px 8px;
+  backdrop-filter: blur(4px) saturate(120%);
+}
+
+/* SMALL SCREENS */
+@media (max-width: 360px) {
+  .quote-line { font-size: 18px; width: 100%; }
+  .ending-quote { width: 92vw; }
+}
+
+/* LARGE SCREENS */
+@media (min-width: 768px) {
+  .ending-quote { width: min(48vw, 520px); }
+  .quote-line {
+    font-size: 32px;
+    letter-spacing: 0.4px;
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.98),
+      0 0 26px rgba(170,200,255,0.9),
+      0 0 50px rgba(130,170,255,0.65),
+      0 0 90px rgba(100,140,255,0.4);
+  }
+}
+
+/* EXTRA LARGE */
+@media (min-width: 1200px) {
+  .quote-line { font-size: 40px; line-height: 1.02; }
+  .ending-quote { width: min(36vw, 640px); }
+}
+
+/* ETHERAL PULSE ANIMATION */
+@keyframes glowPulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    text-shadow:
+      0 0 6px rgba(255,255,255,0.95),
+      0 0 18px rgba(160,190,255,0.85),
+      0 0 36px rgba(120,160,255,0.6),
+      0 0 60px rgba(100,140,255,0.35);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-2px) scale(1.01);
+    text-shadow:
+      0 0 10px rgba(255,255,255,1),
+      0 0 28px rgba(180,210,255,0.95),
+      0 0 52px rgba(140,180,255,0.8),
+      0 0 100px rgba(110,150,255,0.5);
+    opacity: 0.98;
+  }
 }

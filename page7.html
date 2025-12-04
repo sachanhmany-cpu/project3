@@ -7,6 +7,61 @@
 
 </head>
 <body>
+  <main class="page">
+
+    <section class="popup-grid">
+
+      <!-- Row 1 -->
+      <div class="popup"><img src="./images/p1.png"  alt=""></div>
+      <div class="popup"><img src="./images/p2.png"  alt=""></div>
+      <div class="popup"><img src="./images/p3.png"  alt=""></div>
+      <div class="popup"><img src="./images/p4.png"  alt=""></div>
+      <div class="popup"><img src="./images/p5.png"  alt=""></div>
+
+      <!-- Row 2 (p6 removed as requested) -->
+      <div class="popup"><img src="./images/p7.png"  alt=""></div>
+      <div class="popup"><img src="./images/p8.png"  alt=""></div>
+      <div class="popup"><img src="./images/p9.png"  alt=""></div>
+      <div class="popup"><img src="./images/p10.png" alt=""></div>
+      <div class="popup"><img src="./images/p11.png" alt=""></div>
+
+    </section>
+
     <a href="page8.html" class="nav-button">Next</a>
+  </main>
+  <script>
+function placeImages() {
+  const items = document.querySelectorAll('.popup');
+  const placed = [];
+
+  items.forEach(item => {
+    const img = item.querySelector('img');
+    const w = img.offsetWidth;
+    const h = img.offsetHeight;
+
+    let x, y, overlap;
+
+    do {
+      overlap = false;
+      x = Math.random() * (window.innerWidth - w);
+      y = Math.random() * (window.innerHeight - h - 80);
+
+      for (const p of placed) {
+        if (!(x + w < p.x || x > p.x + p.w || y + h < p.y || y > p.y + p.h)) {
+          overlap = true;
+          break;
+        }
+      }
+    } while (overlap);
+
+    placed.push({ x, y, w, h });
+    item.style.left = x + "px";
+    item.style.top = y + "px";
+  });
+}
+
+window.onload = placeImages;
+window.onresize = placeImages;
+</script>
 </body>
 </html>
